@@ -1,39 +1,200 @@
-const express = require('express');
+// const express = require('express');
+// const app = express();
+
+// app.use(express.json());
+
+// // Health check
+// app.get('/api/health', (req, res) => {
+//   res.json({ status: 'ok', time: new Date().toISOString() });
+// });
+
+// // Contact form
+// app.post('/api/contact', (req, res) => {
+//   const { name, email, phone, service, message } = req.body;
+//   if (!name || !email || !phone || !service || !message) {
+//     return res.status(400).json({ error: 'All fields required' });
+//   }
+//   console.log('Enquiry:', { name, email, phone, service, message });
+//   res.json({ success: true, id: Date.now() });
+// });
+
+// // Blog
+// app.get('/api/blog', (req, res) => {
+//   res.json([
+//     { id: 1, title: 'Web Design Trends 2024', category: 'Design', date: '2024-07-10', excerpt: 'Latest trends...', image: 'https://images.unsplash.com/photo-1468056709990-75f315717b99?w=800' },
+//     { id: 2, title: 'SEO Guide 2024', category: 'SEO', date: '2024-07-08', excerpt: 'Complete guide...', image: 'https://images.unsplash.com/photo-1572177812156-58036aae439c?w=800' },
+//     { id: 3, title: 'Digital Marketing Tips', category: 'Marketing', date: '2024-07-05', excerpt: 'Strategies...', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800' }
+//   ]);
+// });
+
+// // Portfolio
+// app.get('/api/portfolio', (req, res) => {
+//   res.json([
+//     { id: 1, title: 'TechCorp Website', category: 'web', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800' },
+//     { id: 2, title: 'Fitness App', category: 'app', image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800' },
+//     { id: 3, title: 'Brand Campaign', category: 'marketing', image: 'https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800' }
+//   ]);
+// });
+
+// module.exports = app;
+
+
+const express = require("express");
+const path = require("path");
+
 const app = express();
 
+// =============================
+// Middleware
+// =============================
+
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// Health check
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', time: new Date().toISOString() });
-});
+// Enable CORS
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
 
-// Contact form
-app.post('/api/contact', (req, res) => {
-  const { name, email, phone, service, message } = req.body;
-  if (!name || !email || !phone || !service || !message) {
-    return res.status(400).json({ error: 'All fields required' });
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(200);
   }
-  console.log('Enquiry:', { name, email, phone, service, message });
-  res.json({ success: true, id: Date.now() });
+
+  next();
 });
 
-// Blog
-app.get('/api/blog', (req, res) => {
+// =============================
+// Static Files
+// =============================
+
+app.use(express.static(path.join(__dirname, "../public")));
+
+// =============================
+// Health Check
+// =============================
+
+app.get("/api/health", (req, res) => {
+  res.status(200).json({
+    success: true,
+    status: "ok",
+    timestamp: new Date().toISOString(),
+  });
+});
+
+// =============================
+// Contact API
+// =============================
+
+app.post("/api/contact", (req, res) => {
+  try {
+    const { name, email, phone, service, message } = req.body;
+
+    if (!name || !email || !phone || !service || !message) {
+      return res.status(400).json({
+        success: false,
+        error: "All fields are required",
+      });
+    }
+
+    console.log("========== NEW ENQUIRY ==========");
+    console.log({
+      name,
+      email,
+      phone,
+      service,
+      message,
+    });
+    console.log("================================");
+
+    return res.status(200).json({
+      success: true,
+      message: "Enquiry submitted successfully",
+      id: Date.now(),
+    });
+
+  } catch (err) {
+    console.error(err);
+
+    return res.status(500).json({
+      success: false,
+      error: "Internal Server Error",
+    });
+  }
+});
+
+// =============================
+// Blog API
+// =============================
+
+app.get("/api/blog", (req, res) => {
   res.json([
-    { id: 1, title: 'Web Design Trends 2024', category: 'Design', date: '2024-07-10', excerpt: 'Latest trends...', image: 'https://images.unsplash.com/photo-1468056709990-75f315717b99?w=800' },
-    { id: 2, title: 'SEO Guide 2024', category: 'SEO', date: '2024-07-08', excerpt: 'Complete guide...', image: 'https://images.unsplash.com/photo-1572177812156-58036aae439c?w=800' },
-    { id: 3, title: 'Digital Marketing Tips', category: 'Marketing', date: '2024-07-05', excerpt: 'Strategies...', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800' }
+    {
+      id: 1,
+      title: "Web Design Trends 2024",
+      category: "Design",
+      date: "2024-07-10",
+      excerpt: "Latest trends...",
+      image:
+        "https://images.unsplash.com/photo-1468056709990-75f315717b99?w=800",
+    },
+    {
+      id: 2,
+      title: "SEO Guide 2024",
+      category: "SEO",
+      date: "2024-07-08",
+      excerpt: "Complete guide...",
+      image:
+        "https://images.unsplash.com/photo-1572177812156-58036aae439c?w=800",
+    },
+    {
+      id: 3,
+      title: "Digital Marketing Tips",
+      category: "Marketing",
+      date: "2024-07-05",
+      excerpt: "Strategies...",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+    },
   ]);
 });
 
-// Portfolio
-app.get('/api/portfolio', (req, res) => {
+// =============================
+// Portfolio API
+// =============================
+
+app.get("/api/portfolio", (req, res) => {
   res.json([
-    { id: 1, title: 'TechCorp Website', category: 'web', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800' },
-    { id: 2, title: 'Fitness App', category: 'app', image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800' },
-    { id: 3, title: 'Brand Campaign', category: 'marketing', image: 'https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800' }
+    {
+      id: 1,
+      title: "TechCorp Website",
+      category: "web",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+    },
+    {
+      id: 2,
+      title: "Fitness App",
+      category: "app",
+      image:
+        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800",
+    },
+    {
+      id: 3,
+      title: "Brand Campaign",
+      category: "marketing",
+      image:
+        "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800",
+    },
   ]);
+});
+
+// =============================
+// Serve Frontend
+// =============================
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
 module.exports = app;
