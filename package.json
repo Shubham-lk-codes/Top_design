@@ -1,0 +1,11 @@
+{
+  "name": "topdesign-website",
+  "version": "1.0.0",
+  "scripts": {
+    "deploy": "vercel --prod",
+     "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

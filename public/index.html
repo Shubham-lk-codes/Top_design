@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOP DESIGN | Website, App, SEO, Marketing, Interior, Printing</title>
+<meta name="description" content="TOP DESIGN - Complete design & marketing solutions in Delhi. Website, App, SEO, Digital Marketing, Interior Design & Printing. Call +91 92660 41927">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--p:#1a1a2e;--s:#16213e;--a:#e94560;--l:#f8f9fa;--d:#0f0f1a;--t:#333;--w:#fff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Outfit',sans-serif;color:var(--t);overflow-x:hidden}
+h1,h2,h3{font-family:'Playfair Display',serif}
+a{text-decoration:none;color:inherit}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-thumb{background:var(--a);border-radius:4px}
+
+/* Nav */
+.nav{position:fixed;top:0;width:100%;z-index:1000;padding:18px 0;transition:.3s;background:transparent}
+.nav.scrolled{background:rgba(26,26,46,.95);backdrop-filter:blur(20px);padding:12px 0}
+.nav-c{max-width:1400px;margin:0 auto;padding:0 30px;display:flex;justify-content:space-between;align-items:center}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-i{width:48px;height:48px;background:linear-gradient(135deg,#e94560,#ff6b6b);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;font-weight:700}
+.logo-t{color:#fff;font-size:26px;font-weight:700;letter-spacing:2px}.logo-t span{color:var(--a)}
+.nav-l{display:flex;gap:30px;list-style:none;align-items:center}
+.nav-l a{color:#fff;font-weight:500;font-size:14px;position:relative;padding:4px 0}
+.nav-l a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--a);transition:.3s}
+.nav-l a:hover::after{width:100%}
+.nav-cta{background:linear-gradient(135deg,#e94560,#ff6b6b);color:#fff;padding:10px 24px;border-radius:50px;font-weight:600;font-size:14px;transition:.3s}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(233,69,96,.3)}
+.mob-btn{display:none;color:#fff;font-size:22px;background:none;border:none;cursor:pointer}
+
+/* Hero */
+.hero{min-height:100vh;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);display:flex;align-items:center;padding-top:80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");opacity:.5}
+.hero-c{max-width:1400px;margin:0 auto;padding:0 30px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2}
+.hero h1{font-size:58px;color:#fff;line-height:1.1;margin-bottom:20px}.hero h1 span{color:var(--a);display:block}
+.hero p{font-size:17px;color:rgba(255,255,255,.8);line-height:1.8;margin-bottom:35px;max-width:480px}
+.btns{display:flex;gap:18px;flex-wrap:wrap}
+.btn-p{background:linear-gradient(135deg,#e94560,#ff6b6b);color:#fff;padding:15px 35px;border-radius:50px;font-weight:600;font-size:15px;display:inline-flex;align-items:center;gap:8px;transition:.3s;border:none;cursor:pointer;box-shadow:0 10px 25px rgba(233,69,96,.3)}
+.btn-p:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(233,69,96,.4)}
+.btn-o{background:transparent;color:#fff;padding:15px 35px;border-radius:50px;font-weight:600;font-size:15px;display:inline-flex;align-items:center;gap:8px;border:2px solid rgba(255,255,255,.3);transition:.3s;cursor:pointer}
+.btn-o:hover{background:#fff;color:var(--p)}
+.stats{display:flex;gap:40px;margin-top:50px;padding-top:35px;border-top:1px solid rgba(255,255,255,.1)}
+.stat h3{font-size:34px;color:var(--a);font-weight:700;font-family:'Outfit',sans-serif}.stat p{font-size:13px;color:rgba(255,255,255,.6)}
+.hero-v{position:relative}.hero-img{width:100%;max-width:550px;height:400px;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:20px;display:flex;align-items:center;justify-content:center;box-shadow:0 25px 50px rgba(0,0,0,.15);position:relative;overflow:hidden}
+.hero-img>div{text-align:center;color:#fff;z-index:2;position:relative}.hero-img i{font-size:70px;margin-bottom:15px;opacity:.9}
+.hero-img h3{font-size:26px;margin-bottom:8px}.hero-img p{opacity:.8;margin:0}
+.fc{position:absolute;background:#fff;border-radius:16px;padding:18px;box-shadow:0 20px 40px rgba(0,0,0,.15);z-index:3;animation:fc 3s ease-in-out infinite}
+.fc1{top:-15px;left:-25px}.fc2{bottom:30px;right:-15px;animation-delay:1.5s}
+@keyframes fc{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.fci{width:45px;height:45px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:8px;color:#fff}
+.fcp{font-size:13px;font-weight:600;color:var(--p)}.fcs{font-size:11px;color:var(--t)}
+
+/* Sections */
+.sec{padding:90px 0}.sec-h{text-align:center;max-width:700px;margin:0 auto 50px;padding:0 20px}
+.label{display:inline-block;background:linear-gradient(135deg,#e94560,#ff6b6b);color:#fff;padding:7px 18px;border-radius:50px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:2px;margin-bottom:18px}
+.sec-h h2{font-size:44px;color:var(--p);margin-bottom:15px}.sec-h p{font-size:17px;color:#666;line-height:1.7}
+
+/* Services */
+.srv{background:var(--l)}
+.grid{max-width:1400px;margin:0 auto;padding:0 30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:25px}
+.card{background:#fff;border-radius:22px;padding:35px;transition:.4s;position:relative;overflow:hidden;border:1px solid rgba(0,0,0,.05)}
+.card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(135deg,#e94560,#ff6b6b);transform:scaleX(0);transform-origin:left;transition:.4s}
+.card:hover::before{transform:scaleX(1)}.card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,.1)}
+.ci{width:65px;height:65px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:20px;transition:.3s;color:#fff}
+.card:hover .ci{transform:scale(1.1) rotate(5deg)}
+.cw{background:linear-gradient(135deg,#667eea,#764ba2)}.ca{background:linear-gradient(135deg,#f093fb,#f5576c)}
+.cm{background:linear-gradient(135deg,#4facfe,#00f2fe)}.cs{background:linear-gradient(135deg,#43e97b,#38f9d7)}
+.ci2{background:linear-gradient(135deg,#fa709a,#fee140)}.cp{background:linear-gradient(135deg,#a8edea,#fed6e3);color:var(--p)}
+.card h3{font-size:22px;color:var(--p);margin-bottom:12px}.card p{color:#666;line-height:1.7;margin-bottom:15px;font-size:14px}
+.feat{list-style:none;margin-bottom:18px}.feat li{padding:6px 0;color:var(--t);font-size:13px;display:flex;align-items:center;gap:8px}
+.feat li i{color:var(--a);font-size:10px}.sl{color:var(--a);font-weight:600;display:inline-flex;align-items:center;gap:6px;transition:.3s;font-size:14px}
+.sl:hover{gap:10px}
+
+/* Portfolio */
+.filt{display:flex;justify-content:center;gap:12px;margin-bottom:45px;flex-wrap:wrap;padding:0 20px}
+.fb{padding:10px 24px;border:2px solid #e0e0e0;background:#fff;border-radius:50px;cursor:pointer;font-weight:600;font-size:13px;transition:.3s;font-family:'Outfit',sans-serif}
+.fb:hover,.fb.on{background:linear-gradient(135deg,#e94560,#ff6b6b);color:#fff;border-color:var(--a);box-shadow:0 5px 15px rgba(233,69,96,.3)}
+.pgrid{max-width:1400px;margin:0 auto;padding:0 30px;display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:25px}
+.pitem{border-radius:18px;overflow:hidden;position:relative;cursor:pointer;height:300px;background:var(--l)}
+.pitem img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.pov{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,26,46,.95),transparent);display:flex;flex-direction:column;justify-content:flex-end;padding:25px;opacity:0;transition:.4s}
+.pitem:hover .pov{opacity:1}.pitem:hover img{transform:scale(1.1)}
+.pov h3{color:#fff;font-size:20px;margin-bottom:6px;transform:translateY(15px);transition:.4s .1s}
+.pov p{color:rgba(255,255,255,.8);font-size:13px;transform:translateY(15px);transition:.4s .2s}
+.pitem:hover .pov h3,.pitem:hover .pov p{transform:translateY(0)}
+.ptag{position:absolute;top:15px;right:15px;background:var(--a);color:#fff;padding:5px 14px;border-radius:50px;font-size:11px;font-weight:600}
+
+/* Testimonials */
+.tst{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);position:relative;overflow:hidden}
+.tst .sec-h h2,.tst .sec-h p{color:#fff}
+.tsl{max-width:1100px;margin:0 auto;padding:0 30px;overflow:hidden}
+.ttr{display:flex;transition:.5s}
+.tcard{min-width:100%;background:rgba(255,255,255,.1);backdrop-filter:blur(20px);border-radius:22px;padding:45px;border:1px solid rgba(255,255,255,.1);text-align:center}
+.tav{width:75px;height:75px;border-radius:50%;background:linear-gradient(135deg,#e94560,#ff6b6b);margin:0 auto 20px;display:flex;align-items:center;justify-content:center;font-size:28px;color:#fff;font-weight:700}
+.ttxt{font-size:18px;color:rgba(255,255,255,.9);line-height:1.8;margin-bottom:25px;font-style:italic}
+.tnm{color:#fff;font-weight:600;font-size:17px}.trl{color:#ff6b6b;font-size:13px}.trt{color:#ffd700;margin-bottom:15px;font-size:18px}
+.snav{display:flex;justify-content:center;gap:12px;margin-top:35px}
+.sd{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:.3s;border:none}
+.sd.on{background:var(--a);width:28px;border-radius:6px}
+
+/* Blog */
+.blg{background:var(--l)}
+.bcard{background:#fff;border-radius:22px;overflow:hidden;transition:.4s;border:1px solid rgba(0,0,0,.05)}
+.bcard:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,.1)}
+.bimg{height:220px;background:linear-gradient(135deg,#1a1a2e,#16213e);position:relative;overflow:hidden}
+.bimg img{width:100%;height:100%;object-fit:cover;transition:.5s}.bcard:hover .bimg img{transform:scale(1.1)}
+.bcat{position:absolute;top:15px;left:15px;background:var(--a);color:#fff;padding:5px 14px;border-radius:50px;font-size:11px;font-weight:600}
+.bcon{padding:25px}.bmeta{display:flex;gap:15px;margin-bottom:12px;font-size:12px;color:#666}
+.bcon h3{font-size:20px;color:var(--p);margin-bottom:12px;line-height:1.3}.bcon p{color:#666;line-height:1.7;margin-bottom:15px;font-size:14px}
+.rm{color:var(--a);font-weight:600;display:inline-flex;align-items:center;gap:6px;transition:.3s;font-size:14px}.rm:hover{gap:10px}
+
+/* CTA */
+.cta{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);position:relative;overflow:hidden;text-align:center;padding:90px 0}
+.cta::before{content:'';position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(233,69,96,.2),transparent 70%);top:-150px;right:-150px;border-radius:50%}
+.cta-c{max-width:750px;margin:0 auto;padding:0 30px;position:relative;z-index:2}
+.cta h2{font-size:44px;color:#fff;margin-bottom:18px}.cta p{font-size:17px;color:rgba(255,255,255,.8);margin-bottom:35px;line-height:1.7}
+
+/* Footer */
+.foot{background:var(--d);padding:70px 0 0;color:#fff}
+.fg{max-width:1400px;margin:0 auto;padding:0 30px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:50px;margin-bottom:50px}
+.foot p{color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:20px;font-size:14px}
+.soc{display:flex;gap:12px}.soc a{width:42px;height:42px;border-radius:10px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#fff;transition:.3s;font-size:16px}
+.soc a:hover{background:var(--a);transform:translateY(-3px)}
+.fcol h4{font-size:17px;margin-bottom:22px;color:#fff;font-weight:600}
+.fl{list-style:none}.fl li{margin-bottom:10px}.fl a{color:rgba(255,255,255,.6);transition:.3s;display:inline-flex;align-items:center;gap:6px;font-size:14px}
+.fl a:hover{color:var(--a);padding-left:4px}
+.fc2 p{color:rgba(255,255,255,.6);margin-bottom:12px;display:flex;align-items:flex-start;gap:10px;line-height:1.6;font-size:14px}
+.fc2 i{color:var(--a);margin-top:3px;font-size:14px;flex-shrink:0}
+.fb2{border-top:1px solid rgba(255,255,255,.1);padding:25px;text-align:center;color:rgba(255,255,255,.5);font-size:13px}
+
+/* Popup */
+.pop{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(10px);z-index:2000;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:.4s;padding:20px}
+.pop.a{opacity:1;visibility:visible}
+.pcon{background:#fff;border-radius:22px;width:100%;max-width:550px;max-height:90vh;overflow-y:auto;transform:scale(.9) translateY(20px);transition:.4s;position:relative}
+.pop.a .pcon{transform:scale(1) translateY(0)}
+.ph{background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);padding:35px;border-radius:22px 22px 0 0;text-align:center;position:relative}
+.ph h2{color:#fff;font-size:26px;margin-bottom:8px}.ph p{color:rgba(255,255,255,.8);font-size:14px}
+.px{position:absolute;top:15px;right:15px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.2);border:none;color:#fff;font-size:18px;cursor:pointer;transition:.3s;display:flex;align-items:center;justify-content:center}
+.px:hover{background:var(--a)}
+.pb{padding:35px}.fg2{margin-bottom:20px}.fg2 label{display:block;margin-bottom:6px;font-weight:600;color:var(--p);font-size:13px}
+.fi{width:100%;padding:12px 16px;border:2px solid #e8e8e8;border-radius:10px;font-family:'Outfit',sans-serif;font-size:14px;transition:.3s;outline:none}
+.fi:focus{border-color:var(--a);box-shadow:0 0 0 3px rgba(233,69,96,.1)}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.sb{width:100%;padding:14px;background:linear-gradient(135deg,#e94560,#ff6b6b);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;transition:.3s;font-family:'Outfit',sans-serif}
+.sb:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(233,69,96,.3)}
+.feb{position:fixed;bottom:25px;right:25px;width:55px;height:55px;border-radius:50%;background:linear-gradient(135deg,#e94560,#ff6b6b);color:#fff;border:none;font-size:22px;cursor:pointer;box-shadow:0 8px 25px rgba(233,69,96,.4);z-index:999;transition:.3s;display:flex;align-items:center;justify-content:center;animation:pu 2s infinite}
+@keyframes pu{0%,100%{box-shadow:0 8px 25px rgba(233,69,96,.4)}50%{box-shadow:0 8px 35px rgba(233,69,96,.6)}}
+.feb:hover{transform:scale(1.1)}
+
+/* Toast */
+.toast{position:fixed;bottom:90px;right:25px;background:var(--p);color:#fff;padding:14px 20px;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.15);z-index:5000;transform:translateX(400px);transition:.4s;display:flex;align-items:center;gap:10px;font-size:14px}
+.toast.s{transform:translateX(0)}.toast i{color:var(--a);font-size:18px}
+
+/* Animations */
+.fade{opacity:0;transform:translateY(25px);transition:.6s}.fade.v{opacity:1;transform:translateY(0)}
+
+/* Responsive */
+@media(max-width:1024px){.hero-c{grid-template-columns:1fr;text-align:center}.hero p{margin:0 auto 35px}.btns{justify-content:center}.stats{justify-content:center}.hero-v{display:none}.fg{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.nav-l{display:none;position:absolute;top:100%;left:0;right:0;background:var(--p);flex-direction:column;padding:25px;gap:15px}.nav-l.a{display:flex}.mob-btn{display:block}.hero h1{font-size:36px}.sec-h h2{font-size:32px}.grid,.pgrid{grid-template-columns:1fr}.fg{grid-template-columns:1fr;gap:35px}.fr{grid-template-columns:1fr}.cta h2{font-size:32px}}
+@media(max-width:480px){.hero h1{font-size:28px}.stats{flex-direction:column;gap:15px;align-items:center}.sec-h h2{font-size:26px}.btn-p,.btn-o{padding:12px 24px;font-size:13px}.ph{padding:25px}.pb{padding:25px}}
+</style>
+</head>
+<body>
+
+<!-- Skip Link -->
+<a href="#main" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--a);color:#fff;padding:8px 16px;z-index:10000;transition:top .3s">Skip to content</a>
+
+<!-- Nav -->
+<nav class="nav" id="nav">
+<div class="nav-c">
+<a href="/" class="logo"><div class="logo-i">TD</div><div class="logo-t">TOP <span>DESIGN</span></div></a>
+<ul class="nav-l" id="nl">
+<li><a href="#home" class="active">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#testimonials">Testimonials</a></li>
+<li><a href="#blog">Blog</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a href="#" onclick="ep();return false" class="nav-cta">Get Quote</a></li>
+</ul>
+<button class="mob-btn" onclick="tm()" aria-label="Menu"><i class="fas fa-bars"></i></button>
+</div>
+</nav>
+
+<main id="main">
+
+<!-- Hero -->
+<section class="hero" id="home">
+<div class="hero-c">
+<div>
+<h1>Transform Your <span>Digital Presence</span></h1>
+<p>We craft stunning websites, powerful apps, and result-driven marketing strategies that elevate your brand and drive real business growth.</p>
+<div class="btns">
+<a href="#services" class="btn-p"><i class="fas fa-rocket"></i> Our Services</a>
+<a href="#portfolio" class="btn-o"><i class="fas fa-play"></i> View Work</a>
+</div>
+<div class="stats">
+<div class="stat"><h3>500+</h3><p>Projects Completed</p></div>
+<div class="stat"><h3>98%</h3><p>Client Satisfaction</p></div>
+<div class="stat"><h3>10+</h3><p>Years Experience</p></div>
+</div>
+</div>
+<div class="hero-v">
+<div class="hero-img">
+<div><i class="fas fa-paint-brush"></i><h3>Creative Excellence</h3><p>Design &bull; Develop &bull; Deliver</p></div>
+</div>
+<div class="fc fc1"><div class="fci" style="background:linear-gradient(135deg,#667eea,#764ba2)"><i class="fas fa-check"></i></div><div class="fcp">Project Delivered</div><div class="fcs">Just now</div></div>
+<div class="fc fc2"><div class="fci" style="background:linear-gradient(135deg,#f093fb,#f5576c)"><i class="fas fa-star"></i></div><div class="fcp">5 Star Rating</div><div class="fcs">From Client</div></div>
+</div>
+</div>
+</section>
+
+<!-- Services -->
+<section class="sec srv" id="services">
+<div class="sec-h fade"><span class="label">What We Do</span><h2>Our Services</h2><p>From concept to completion, we provide end-to-end solutions for all your digital and design needs under one roof.</p></div>
+<div class="grid" id="sg"></div>
+</section>
+
+<!-- Portfolio -->
+<section class="sec" id="portfolio">
+<div class="sec-h fade"><span class="label">Our Work</span><h2>Portfolio</h2><p>Explore our latest projects and see how we bring ideas to life.</p></div>
+<div class="filt fade">
+<button class="fb on" onclick="pf('all',this)">All</button>
+<button class="fb" onclick="pf('web',this)">Website</button>
+<button class="fb" onclick="pf('app',this)">App</button>
+<button class="fb" onclick="pf('marketing',this)">Marketing</button>
+<button class="fb" onclick="pf('interior',this)">Interior</button>
+<button class="fb" onclick="pf('print',this)">Print</button>
+</div>
+<div class="pgrid" id="pg"></div>
+</section>
+
+<!-- Testimonials -->
+<section class="sec tst" id="testimonials">
+<div class="sec-h fade"><span class="label" style="background:rgba(255,255,255,.2)">Testimonials</span><h2>What Clients Say</h2><p>Don't just take our word for it. Here's what our clients have to say about working with us.</p></div>
+<div class="tsl"><div class="ttr" id="ttr"></div><div class="snav" id="snav"></div></div>
+</section>
+
+<!-- Blog -->
+<section class="sec blg" id="blog">
+<div class="sec-h fade"><span class="label">Latest News</span><h2>From Our Blog</h2><p>Stay updated with the latest trends, tips, and insights from the world of design and marketing.</p></div>
+<div class="grid" id="bg"></div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+<div class="cta-c">
+<h2>Ready to Start Your Project?</h2>
+<p>Let's discuss how we can help transform your business. Get a free consultation and quote today.</p>
+<button class="btn-p" onclick="ep()" style="font-size:17px;padding:16px 45px"><i class="fas fa-paper-plane"></i> Get Free Quote</button>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="foot">
+<div class="fg">
+<div>
+<a href="/" class="logo" style="margin-bottom:18px;display:inline-flex"><div class="logo-i">TD</div><div class="logo-t">TOP <span>DESIGN</span></div></a>
+<p>Your one-stop solution for website design, app design, digital marketing, SEO, interior design, and printing services. We bring creativity and technology together.</p>
+<div class="soc">
+<a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+<a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+<a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+<a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+</div>
+</div>
+<div class="fcol"><h4>Quick Links</h4><ul class="fl">
+<li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+<li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+<li><a href="#portfolio"><i class="fas fa-chevron-right"></i> Portfolio</a></li>
+<li><a href="#blog"><i class="fas fa-chevron-right"></i> Blog</a></li>
+<li><a href="#" onclick="ep();return false"><i class="fas fa-chevron-right"></i> Contact</a></li>
+</ul></div>
+<div class="fcol"><h4>Services</h4><ul class="fl">
+<li><a href="#services"><i class="fas fa-chevron-right"></i> Website Design</a></li>
+<li><a href="#services"><i class="fas fa-chevron-right"></i> App Design</a></li>
+<li><a href="#services"><i class="fas fa-chevron-right"></i> Digital Marketing</a></li>
+<li><a href="#services"><i class="fas fa-chevron-right"></i> SEO Services</a></li>
+<li><a href="#services"><i class="fas fa-chevron-right"></i> Interior Design</a></li>
+<li><a href="#services"><i class="fas fa-chevron-right"></i> Printing</a></li>
+</ul></div>
+<div class="fcol fc2"><h4>Contact Us</h4>
+<p><i class="fas fa-map-marker-alt"></i> Dwarka, More, Delhi, India</p>
+<p><i class="fas fa-phone"></i> <a href="tel:+919266041927" style="color:inherit">+91 92660 41927</a></p>
+<p><i class="fas fa-envelope"></i> <a href="mailto:info@topdesign.co.in" style="color:inherit">info@topdesign.co.in</a></p>
+<p><i class="fas fa-globe"></i> <a href="https://www.topdesign.co.in" style="color:inherit">www.topdesign.co.in</a></p>
+<p><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 7:00 PM</p>
+</div>
+</div>
+<div class="fb2"><p>&copy; 2024 TOP DESIGN. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color:var(--a)"></i> by TOP DESIGN Team</p></div>
+</footer>
+</main>
+
+<!-- Popup -->
+<div class="pop" id="pop">
+<div class="pcon">
+<div class="ph"><button class="px" onclick="cp()" aria-label="Close"><i class="fas fa-times"></i></button><h2>Get a Free Quote</h2><p>Fill in the details below and we'll get back to you within 24 hours.</p></div>
+<div class="pb">
+<form id="ef" onsubmit="se(event)">
+<div class="fr">
+<div class="fg2"><label>Full Name *</label><input type="text" name="name" class="fi" required placeholder="Your name"></div>
+<div class="fg2"><label>Email *</label><input type="email" name="email" class="fi" required placeholder="Your email"></div>
+</div>
+<div class="fr">
+<div class="fg2"><label>Phone *</label><input type="tel" name="phone" class="fi" required placeholder="Your phone"></div>
+<div class="fg2"><label>Service *</label><select name="service" class="fi" required><option value="">Select Service</option><option>Website Design</option><option>App Design</option><option>Digital Marketing</option><option>SEO Services</option><option>Interior Design</option><option>Printing Services</option></select></div>
+</div>
+<div class="fg2"><label>Budget</label><select name="budget" class="fi"><option value="">Select Budget</option><option>Under Rs. 10,000</option><option>Rs. 10,000 - 25,000</option><option>Rs. 25,000 - 50,000</option><option>Rs. 50,000 - 1,00,000</option><option>Above Rs. 1,00,000</option></select></div>
+<div class="fg2"><label>Project Details *</label><textarea name="message" class="fi" required placeholder="Tell us about your project..." rows="4"></textarea></div>
+<button type="submit" class="sb"><i class="fas fa-paper-plane"></i> Submit Enquiry</button>
+</form>
+</div>
+</div>
+</div>
+
+<!-- Floating Button -->
+<button class="feb" onclick="ep()" aria-label="Get Quote"><i class="fas fa-comment-dots"></i></button>
+
+<!-- Toast -->
+<div class="toast" id="toast"><i class="fas fa-check-circle"></i><span id="tm">Message sent!</span></div>
+
+<script>
+// Data
+const sv=[{id:'web',t:'Website Design',i:'fa-laptop-code',c:'cw',d:'Custom, responsive websites that captivate visitors and convert them into customers.',f:['Responsive Design','SEO Optimized','Fast Loading','CMS Integration']},{id:'app',t:'App Design',i:'fa-mobile-alt',c:'ca',d:'Intuitive mobile app interfaces for iOS and Android that users love.',f:['iOS & Android','UI/UX Design','Prototyping','User Testing']},{id:'marketing',t:'Digital Marketing',i:'fa-bullhorn',c:'cm',d:'Data-driven campaigns that increase visibility, engagement, and ROI.',f:['Social Media','PPC Campaigns','Content Strategy','Analytics']},{id:'seo',t:'SEO Services',i:'fa-search',c:'cs',d:'Rank higher on Google with proven strategies that drive organic traffic.',f:['Keyword Research','On-Page SEO','Link Building','Technical SEO']},{id:'interior',t:'Interior Design',i:'fa-couch',c:'ci2',d:'Transform spaces into stunning environments with creative solutions.',f:['3D Visualization','Space Planning','Material Selection','Project Management']},{id:'print',t:'Printing Services',i:'fa-print',c:'cp',d:'High-quality printing from business cards to large format banners.',f:['Business Cards','Brochures','Large Format','Packaging']}];
+const ts=[{n:'Vikram Singh',r:'CEO, TechStart India',x:'TOP DESIGN transformed our online presence completely. Our website traffic increased by 300% within 3 months. Highly recommended!',s:5},{n:'Ananya Gupta',r:'Marketing Director, StyleHub',x:'The team is incredibly talented. They understood our vision and delivered a stunning website that perfectly represents our brand.',s:5},{n:'Rajesh Khanna',r:'Owner, Khanna Interiors',x:'Outstanding interior design services! They transformed our office space into a modern, functional environment.',s:5},{n:'Meera Patel',r:'Founder, Organic Foods',x:'Their SEO services helped us rank on the first page of Google. Sales have increased by 150%.',s:5},{n:'Arjun Reddy',r:'CTO, FinApp Solutions',x:'The app design is intuitive and beautiful. User engagement increased by 200% after the redesign.',s:5}];
+const bp=[{t:'Web Design Trends 2024',c:'Design',a:'TOP DESIGN',d:'2024-07-10',e:'Latest trends shaping the future of web design.',i:'https://images.unsplash.com/photo-1468056709990-75f315717b99?w=800'},{t:'SEO Guide 2024',c:'SEO',a:'Rajesh',d:'2024-07-08',e:'Complete guide to modern SEO strategies.',i:'https://images.unsplash.com/photo-1572177812156-58036aae439c?w=800'},{t:'Digital Marketing Tips',c:'Marketing',a:'Priya',d:'2024-07-05',e:'Effective tactics for small businesses.',i:'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800'},{t:'Interior Design Tips',c:'Interior',a:'Design Team',d:'2024-07-01',e:'Transform your living space with expert tips.',i:'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800'},{t:'Mobile App UI Best Practices',c:'Design',a:'Tech Team',d:'2024-06-28',e:'Create user-friendly mobile interfaces.',i:'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800'},{t:'Print Marketing in Digital Age',c:'Printing',a:'Marketing',d:'2024-06-25',e:'Why print still matters in digital era.',i:'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800'}];
+const pp=[{t:'TechCorp Website',c:'web',d:'Corporate website redesign',i:'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800'},{t:'Fitness App UI',c:'app',d:'Mobile fitness tracking app',i:'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800'},{t:'Brand Campaign',c:'marketing',d:'Social media marketing',i:'https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800'},{t:'E-commerce SEO',c:'marketing',d:'SEO optimization',i:'https://images.unsplash.com/photo-1572177812156-58036aae439c?w=800'},{t:'Modern Apartment',c:'interior',d:'3BHK interior design',i:'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800'},{t:'Business Cards',c:'print',d:'Premium card design',i:'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=800'},{t:'Restaurant Website',c:'web',d:'Food & dining site',i:'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800'},{t:'Banking App',c:'app',d:'Mobile banking UI',i:'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800'},{t:'Office Interior',c:'interior',d:'Corporate office redesign',i:'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800'}];
+let ct=0,ti;
+
+// Init
+document.addEventListener('DOMContentLoaded',()=>{
+for(let i=0;i<15;i++){let p=document.createElement('div');p.className='particle';p.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;width:${Math.random()*12+4}px;height:${p.style.width};animation-delay:${Math.random()*15}s;animation-duration:${Math.random()*10+10}s`;document.querySelector('.hero').appendChild(p)}
+document.getElementById('sg').innerHTML=sv.map(s=>`<div class="card fade"><div class="ci ${s.c}"><i class="fas ${s.i}"></i></div><h3>${s.t}</h3><p>${s.d}</p><ul class="feat">${s.f.map(f=>`<li><i class="fas fa-check-circle"></i> ${f}</li>`).join('')}</ul><a href="#" class="sl" onclick="return false">Learn More <i class="fas fa-arrow-right"></i></a></div>`).join('');
+document.getElementById('pg').innerHTML=pp.map(p=>`<div class="pitem" data-c="${p.c}"><img src="${p.i}" alt="${p.t}" loading="lazy"><span class="ptag">${p.c.toUpperCase()}</span><div class="pov"><h3>${p.t}</h3><p>${p.d}</p></div></div>`).join('');
+document.getElementById('ttr').innerHTML=ts.map(t=>`<div class="tcard"><div class="tav">${t.n[0]}</div><div class="trt">${'★'.repeat(t.s)}</div><p class="ttxt">"${t.x}"</p><div class="tnm">${t.n}</div><div class="trl">${t.r}</div></div>`).join('');
+document.getElementById('snav').innerHTML=ts.map((_,i)=>`<button class="sd ${i===0?'on':''}" onclick="gt(${i})" aria-label="Testimonial ${i+1}"></button>`).join('');
+document.getElementById('bg').innerHTML=bp.map(b=>`<div class="bcard fade"><div class="bimg"><img src="${b.i}" alt="${b.t}" loading="lazy"><span class="bcat">${b.c}</span></div><div class="bcon"><div class="bmeta"><span><i class="fas fa-calendar"></i> ${b.d}</span><span><i class="fas fa-user"></i> ${b.a}</span></div><h3>${b.t}</h3><p>${b.e}</p><a href="#" class="rm">Read More <i class="fas fa-arrow-right"></i></a></div></div>`).join('');
+
+// Scroll
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50)});
+new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')})).observe(document.querySelectorAll('.fade'));
+
+// Testimonial slider
+ti=setInterval(()=>{ct=(ct+1)%ts.length;ut()},5000);
+});
+
+function tm(){document.getElementById('nl').classList.toggle('a')}
+function ep(){document.getElementById('pop').classList.add('a');document.body.style.overflow='hidden'}
+function cp(){document.getElementById('pop').classList.remove('a');document.body.style.overflow=''}
+function gt(i){ct=i;ut();clearInterval(ti);ti=setInterval(()=>{ct=(ct+1)%ts.length;ut()},5000)}
+function ut(){document.getElementById('ttr').style.transform=`translateX(-${ct*100}%)`;document.querySelectorAll('.sd').forEach((d,i)=>d.classList.toggle('on',i===ct))}
+function pf(f,b){document.querySelectorAll('.fb').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.pitem').forEach(p=>p.style.display=f==='all'||p.dataset.c===f?'block':'none')}
+async function se(e){e.preventDefault();const fd=new FormData(e.target);const data=Object.fromEntries(fd);try{const r=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});if(r.ok){e.target.reset();cp();st('Enquiry submitted! We will contact you soon.')}else{const err=await r.json();st(err.error||'Failed. Try again.')}}catch(err){st('Saved locally. Server unavailable.');cp()}}
+function st(m){const t=document.getElementById('toast'),tm=document.getElementById('tm');tm.textContent=m;t.classList.add('s');setTimeout(()=>t.classList.remove('s'),4000)}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')cp()});
+document.getElementById('pop').addEventListener('click',e=>{if(e.target===e.currentTarget)cp()});
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"TOP DESIGN","url":"https://www.topdesign.co.in","description":"Website Design, App Design, Digital Marketing, SEO, Interior Design & Printing Services","address":{"@type":"PostalAddress","streetAddress":"Dwarka, More","addressLocality":"Delhi","addressCountry":"IN"},"telephone":"+91-92660-41927","email":"info@topdesign.co.in","hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Website Design"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"App Design"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Digital Marketing"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"SEO Services"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Interior Design"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Printing Services"}}]}}
+</script>
+
+</body>
+</html>
