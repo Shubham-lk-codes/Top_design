@@ -342,7 +342,8 @@ document.getElementById('bg').innerHTML=bp.map(b=>`<div class="bcard fade"><div 
 
 // Scroll
 window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50)});
-new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')})).observe(document.querySelectorAll('.fade'));
+const fadeObserver=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')}));
+document.querySelectorAll('.fade').forEach(element=>fadeObserver.observe(element));
 
 // Testimonial slider
 ti=setInterval(()=>{ct=(ct+1)%ts.length;ut()},5000);
